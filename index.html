@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paris — Birthday Trip 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f5f0e8;
+    --dark: #1a1410;
+    --gold: #c9a84c;
+    --gold-light: #e8c96a;
+    --rouge: #8b2635;
+    --bleu: #1c3a5e;
+    --text: #2c2416;
+    --muted: #8a7a65;
+    --card-bg: #faf7f2;
+    --border: rgba(201,168,76,0.3);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--cream);
+    color: var(--text);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  /* Grain overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.4;
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    padding: 4rem 2rem;
+    background: var(--dark);
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,168,76,0.15) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 20% 80%, rgba(28,58,94,0.3) 0%, transparent 50%),
+      radial-gradient(ellipse 50% 30% at 80% 70%, rgba(139,38,53,0.2) 0%, transparent 50%);
+  }
+
+  .hero-lines {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    opacity: 0.07;
+  }
+
+  .hero-lines::before, .hero-lines::after {
+    content: '';
+    position: absolute;
+    border: 1px solid var(--gold);
+  }
+
+  .hero-lines::before {
+    width: 600px; height: 600px;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%) rotate(15deg);
+    border-radius: 2px;
+  }
+
+  .hero-lines::after {
+    width: 450px; height: 450px;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%) rotate(30deg);
+    border-radius: 2px;
+  }
+
+  .hero-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.2s forwards;
+  }
+
+  .hero-city {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(5rem, 18vw, 14rem);
+    font-weight: 900;
+    color: var(--cream);
+    line-height: 0.85;
+    letter-spacing: -0.02em;
+    opacity: 0;
+    animation: fadeUp 0.9s ease 0.4s forwards;
+    position: relative;
+  }
+
+  .hero-city span {
+    display: block;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(201,168,76,0.6);
+    font-style: italic;
+    font-size: 0.6em;
+    letter-spacing: 0.05em;
+  }
+
+  .hero-divider {
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 2.5rem auto;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.7s forwards;
+  }
+
+  .hero-dates {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    color: rgba(245,240,232,0.7);
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.9s forwards;
+  }
+
+  .hero-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    font-style: italic;
+    color: rgba(245,240,232,0.5);
+    margin-top: 0.5rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 1.1s forwards;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.3);
+    opacity: 0;
+    animation: fadeUp 0.8s ease 1.4s forwards;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .scroll-arrow {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, transparent, var(--gold));
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; transform: scaleY(1); }
+    50% { opacity: 1; transform: scaleY(1.2); }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* NAV */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(26,20,16,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+    padding: 0 2rem;
+  }
+
+  .nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--gold);
+    white-space: nowrap;
+    padding: 1rem 0;
+    font-style: italic;
+  }
+
+  .nav-days {
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .nav-days::-webkit-scrollbar { display: none; }
+
+  .nav-btn {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.4);
+    background: none;
+    border: none;
+    padding: 1.2rem 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+    position: relative;
+  }
+
+  .nav-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 50%; right: 50%;
+    height: 2px;
+    background: var(--gold);
+    transition: left 0.3s ease, right 0.3s ease;
+  }
+
+  .nav-btn:hover { color: rgba(245,240,232,0.8); }
+
+  .nav-btn.active {
+    color: var(--gold);
+  }
+
+  .nav-btn.active::after {
+    left: 0; right: 0;
+  }
+
+  /* MAIN CONTENT */
+  .main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 2rem 8rem;
+  }
+
+  /* DAY PANELS */
+  .day-panel {
+    display: none;
+    animation: panelIn 0.5s ease forwards;
+  }
+
+  .day-panel.active { display: block; }
+
+  @keyframes panelIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .day-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+    flex-wrap: wrap;
+  }
+
+  .day-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 8rem;
+    font-weight: 900;
+    line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(201,168,76,0.25);
+    user-select: none;
+    flex-shrink: 0;
+  }
+
+  .day-title-block { flex: 1; min-width: 200px; }
+
+  .day-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+
+  .day-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--dark);
+  }
+
+  .day-narrative {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--muted);
+    margin-top: 0.8rem;
+    max-width: 500px;
+  }
+
+  /* TIMELINE */
+  .timeline {
+    position: relative;
+    padding-left: 2.5rem;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    bottom: 12px;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--gold), rgba(201,168,76,0.1));
+  }
+
+  .stop {
+    position: relative;
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  .stop.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .stop-dot {
+    position: absolute;
+    left: -2.5rem;
+    top: 1.1rem;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--gold);
+    transform: translateX(-4px);
+    box-shadow: 0 0 0 3px rgba(201,168,76,0.15);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  .stop:hover .stop-dot {
+    box-shadow: 0 0 0 6px rgba(201,168,76,0.2);
+    transform: translateX(-4px) scale(1.3);
+  }
+
+  .stop-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+
+  .stop-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(26,20,16,0.12);
+    border-color: rgba(201,168,76,0.6);
+  }
+
+  .stop-card-inner {
+    padding: 1.4rem 1.6rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 1rem;
+    align-items: start;
+  }
+
+  .stop-time {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+    white-space: nowrap;
+    padding-top: 0.2rem;
+    min-width: 55px;
+  }
+
+  .stop-content { flex: 1; }
+
+  .stop-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--dark);
+    line-height: 1.3;
+    margin-bottom: 0.25rem;
+  }
+
+  .stop-type {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.6rem;
+  }
+
+  .stop-notes {
+    font-size: 0.95rem;
+    color: #5a4a35;
+    line-height: 1.6;
+  }
+
+  .stop-expand {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--gold);
+    white-space: nowrap;
+    padding-top: 0.3rem;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+  }
+
+  .stop-card:hover .stop-expand { opacity: 1; }
+
+  /* Tags */
+  .stop-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.8rem;
+  }
+
+  .tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.55rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    border-radius: 1px;
+    border: 1px solid;
+  }
+
+  .tag-booked { color: var(--rouge); border-color: rgba(139,38,53,0.4); background: rgba(139,38,53,0.06); }
+  .tag-food { color: #5a6e1c; border-color: rgba(90,110,28,0.4); background: rgba(90,110,28,0.06); }
+  .tag-activity { color: var(--bleu); border-color: rgba(28,58,94,0.4); background: rgba(28,58,94,0.06); }
+  .tag-travel { color: var(--muted); border-color: rgba(138,122,101,0.4); background: rgba(138,122,101,0.06); }
+  .tag-shop { color: #7a3e00; border-color: rgba(122,62,0,0.4); background: rgba(122,62,0,0.06); }
+
+  /* PLAN BLOCKS */
+  .plan-blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .plan-block {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 1.4rem 1.6rem;
+  }
+
+  .plan-label {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 0.5rem;
+  }
+
+  .plan-desc {
+    font-size: 0.95rem;
+    color: #5a4a35;
+    line-height: 1.6;
+  }
+
+  /* DINNER OPTIONS */
+  .dinner-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding-left: 0;
+  }
+
+  .dinner-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--gold);
+    padding: 1.2rem 1.4rem;
+    border-radius: 2px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .dinner-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(26,20,16,0.1);
+  }
+
+  .dinner-rating {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+
+  .dinner-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 0.2rem;
+  }
+
+  .dinner-addr {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    margin-bottom: 0.7rem;
+  }
+
+  .dinner-desc {
+    font-size: 0.9rem;
+    color: #5a4a35;
+    line-height: 1.6;
+    margin-bottom: 0.8rem;
+  }
+
+  /* TIPS SECTION */
+  .tips-section {
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .tips-heading {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+  }
+
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+  }
+
+  .tip-card {
+    background: var(--dark);
+    color: var(--cream);
+    padding: 1.4rem 1.6rem;
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .tip-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 2px;
+    height: 100%;
+    background: var(--gold);
+  }
+
+  .tip-icon {
+    font-size: 1.4rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .tip-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+    color: var(--gold-light);
+  }
+
+  .tip-text {
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: rgba(245,240,232,0.7);
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--dark);
+    text-align: center;
+    padding: 3rem 2rem;
+    border-top: 1px solid rgba(201,168,76,0.15);
+  }
+
+  .footer-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: rgba(245,240,232,0.35);
+  }
+
+  .footer-gold {
+    color: var(--gold);
+    opacity: 0.7;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    .stop-card-inner {
+      grid-template-columns: 1fr;
+      gap: 0.4rem;
+    }
+    .stop-expand { display: none; }
+    .day-number { font-size: 5rem; }
+    .hero-city { font-size: clamp(4rem, 22vw, 7rem); }
+    .nav-logo { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-lines"></div>
+  <p class="hero-eyebrow">A Birthday Adventure</p>
+  <h1 class="hero-city">
+    Paris
+    <span>City of Light</span>
+  </h1>
+  <div class="hero-divider"></div>
+  <p class="hero-dates">28 February — 3 March 2025</p>
+
+  <div class="scroll-hint">
+    Scroll to explore
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<!-- STICKY NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-logo">Paris ✦ Birthday 2025</div>
+    <div class="nav-days">
+      <button class="nav-btn active" onclick="showDay(0)">Sat 28 Feb</button>
+      <button class="nav-btn" onclick="showDay(1)">Sun 1 Mar</button>
+      <button class="nav-btn" onclick="showDay(2)">Mon 2 Mar</button>
+      <button class="nav-btn" onclick="showDay(3)">Tue 3 Mar</button>
+    </div>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- DAY 1 -->
+  <div class="day-panel active" id="day-0">
+    <div class="day-header">
+      <div class="day-number">01</div>
+      <div class="day-title-block">
+        <div class="day-label">Saturday 28th February</div>
+        <h2 class="day-title">Arrival &amp; the Ghostly Tour</h2>
+        <p class="day-narrative">Step off the Eurostar into the golden afternoon light of Paris. Check in, catch your breath, and by nightfall you'll be prowling the ancient streets of Île de la Cité for tales of dark history.</p>
+      </div>
+    </div>
+
+    <div class="timeline">
+
+      <div class="stop">
+        <div class="stop-dot"></div>
+        <div class="stop-card">
+          <div class="stop-card-inner">
+            <div class="stop-time">10:00</div>
+            <div class="stop-content">
+              <div class="stop-name">Depart for London</div>
+              <div class="stop-type">Travel</div>
+              <div class="stop-notes">Head from home to London for the Eurostar. Leave time for security and check-in at St Pancras.</div>
+              <div class="stop-tags"><span class="tag tag-travel">Travel</span><span class="tag tag-booked">Booked</span></div>
+            </div>
+            <div class="stop-expand">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stop">
+        <div class="stop-dot"></div>
+        <div class="stop-card">
+          <div class="stop-card-inner">
+            <div class="stop-time">13:31</div>
+            <div class="stop-content">
+              <div class="stop-name">Eurostar — London to Paris</div>
+              <div class="stop-type">Travel · St Pancras → Gare du Nord</div>
+              <div class="stop-notes">Direct Eurostar. You arrive at Gare du Nord at approximately <strong>16:45 CET</strong> — don't forget the 1 hour time difference!</div>
+              <div class="stop-tags"><span class="tag tag-travel">Eurostar</span><span class="tag tag-booked">Booked</span></div>
+            </div>
+            <div class="stop-expand">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stop">
+        <div class="stop-dot"></div>
+        <div class="stop-card">
+          <div class="stop-card-inner">
+            <div class="stop-time">~17:10</div>
+            <div class="stop-content">
+              <div class="stop-name">Hôtel La Belle Ville — Check In</div>
+              <div class="stop-type">Hotel · 349 Rue de Belleville, 75019</div>
+              <div class="stop-notes">~20 mins metro from Gare du Nord. Check in, freshen up, and get your bearings. Friends split off to their hotel at this point. Leave by 18:20 at the latest for the tour.</div>
+              <div class="stop-tags"><span class="tag tag-travel">Metro</span><span class="tag tag-booked">Hotel</span></div>
+            </div>
+            <div class="stop-expand">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stop">
+        <div class="stop-dot"></div>
+        <div class="stop-card">
+          <div class="stop-card-inner">
+            <div class="stop-time">19:00</div>
+            <div class="stop-content">
+              <div class="stop-name">Dark History &amp; Ghostly Walking Tour</div>
+              <div class="stop-type">Activity · 1 Rue d'Arcole, 75004 (Île de la Cité)</div>
+              <div class="stop-notes">Meet your guide at the foot of Notre-Dame for an evening of dark Parisian history. Runs approximately 1.5–2 hours. The Marais neighbourhood is right nearby — perfect for dinner afterwards.</div>
+              <div class="stop-tags"><span class="tag tag-booked">Booked</span><span class="tag tag-activity">Evening Tour</span></div>
+            </div>
+            <div class="stop-expand">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stop">
+        <div class="stop-dot"></div>
+        <div class="stop-card">
+          <div class="stop-card-inner">
+            <div class="stop-time">~21:00</div>
+            <div class="stop-content">
+              <div class="stop-name">Dinner in Le Marais</div>
+              <div class="stop-type">Food &amp; Drink · 4th Arrondissement</div>
+              <div class="stop-notes">The Marais is one of Paris's most vibrant neighbourhoods for dinner. Lots of brilliant options along Rue de Bretagne and around Place des Vosges.</div>
+              <div class="stop-tags"><span class="tag tag-food">Dinner</span></div>
+            </div>
+            <div class="stop-expand">→</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tips-section">
+      <div class="tips-heading">✦ Day Notes</div>
+      <div class="tips-grid">
+        <div class="tip-card">
+          <div class="tip-icon">🕐</div>
+          <div class="tip-title">Time Zone</div>
+          <div class="tip-text">Paris is CET — 1 hour ahead of London. Your 13:31 departure becomes a ~16:45 Paris arrival. All times in this itinerary are Paris time.</div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">🚇</div>
+          <div class="tip-title">Gare du Nord → Hotel</div>
+          <div class="tip-text">Take Metro Line 5 from Gare du Nord towards Place d'Italie. Change or take a short walk to Belleville. The metro runs frequently and takes ~20 mins.</div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">🌙</div>
+          <div class="tip-title">After the Tour</div>
+          <div class="tip-text">The area around Notre-Dame and Île de la Cité is stunning at night. Take a moment to see the cathedral lit up before heading to the Marais for dinner.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 2 -->
+  <div class="day-panel" id="day-1">
+    <div class="day-header">
+      <div class="day-number">02</div>
+      <div class="day-title-block">
+        <div class="day-label">Sunday 1st March</div>
+        <h2 class="day-title">Montmartre, Jellycat &amp; the Canal Cruise</h2>
+        <p class="day-narrative">A morning of cobbled streets and panoramic views in Montmartre, a shopping trip to the iconic Galeries Lafayette, and an afternoon gliding along the romantic Canal Saint-Martin.</p>
+      </div>
+    </div>
+
+    <div class="timeline">
+
+      <div class="stop">
+        <div class="stop-dot"></div>
+        <div class="stop-card">
+          <div class="stop-card-inner">
+            <div class="stop-time">Hotel</div>
+            <div class="stop-content">
+              <div class="stop-name">Breakfast at La Belle Ville</div>
+              <div class="stop-type">Food · Included with stay</div>
+              <div class="stop-notes">Breakfast is included! Reviews rave about it — a great start to the day. Fuel up before heading to Montmartre.</div>
+              <div class="stop-tags"><span class="tag tag-food">Breakfast</span><span class="tag tag-booked">Included</span></div>
+            </div>
+            <div class="stop-expand">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stop">
+        <div class="stop-dot"></div>
+        <div class="stop-card">
+          <div class="stop-card-inner">
+            <div class="stop-time">09:30</div>
+            <div class="stop-content">
+              <div class="stop-name">John Wick Stairs — Montmartre Overlook</div>
+              <div class="stop-type">Landmark · 9 Rue du Cardinal Dubois, 75018</div>
+              <div class="stop-notes">These famous steps near Sacré-Cœur offer one of Paris's best free panoramic views — and of course their John Wick film fame! Open 24hrs. Budget around 45 mins to soak it all in.</div>
+              <div class="stop-tags"><span class="tag tag-activity">Landmark</span><span class="tag tag-activity">Free</span></div>
+            </div>
+            <div class="stop-expand">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stop">
+        <div class="stop-dot"></div>
+        <div class="stop-card">
+          <div class="stop-card-inner">
+            <div class="stop-time">11:00</div>
+            <div class="stop-content">
+              <div class="stop-name">Galeries Lafayette Haussmann — Jellycat Experience</div>
+              <div class="stop-type">Shopping · 40 Bd Haussmann, 75009</div>
+              <div class="stop-notes">~20 mins walk or quick metro from Montmartre. Opens at 11:00 on Sundays. Budget 45–60 mins for the Jellycat experience. Bonus: the free rooftop terrace has spectacular views across Paris!</div>
+              <div class="stop-tags"><span class="tag tag-shop">Shopping</span><span class="tag tag-activity">Rooftop Views</span></div>
+            </div>
+            <div class="stop-expand">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stop">
+        <div class="stop-dot"></div>
+        <div class="stop-card">
+          <div class="stop-card-inner">
+            <div class="stop-time">12:00</div>
+            <div class="stop-content">
+              <div class="stop-name">Lunch — Opéra / Haussmann Area</div>
+              <div class="stop-type">Food · 9th Arrondissement</div>
+              <div class="stop-notes">Plenty of brilliant cafés and brasseries around the Opéra area. Aim to be done by 14:00 to travel comfortably to the canal cruise.</div>
+              <div class="stop-tags"><span class="tag tag-food">Lunch</span></div>
+            </div>
+            <div class="stop-expand">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stop">
+        <div class="stop-dot"></div>
+        <div class="stop-card">
+          <div class="stop-card-inner">
+            <div class="stop-time">15:00</div>
+            <div class="stop-content">
+              <div class="stop-name">River Cruise — Canal Saint-Martin</div>
+              <div class="stop-type">Activity · 71 Quai de Valmy, 75010</div>
+              <div class="stop-notes">~25–30 mins from Galeries Lafayette by metro. The cruise runs 15:00–17:00. A beautiful 2-hour journey along Paris's romantic canal with iron footbridges and leafy towpaths.</div>
+              <div class="stop-tags"><span class="tag tag-booked">Booked</span><span class="tag tag-activity">Cruise</span></div>
+            </div>
+            <div class="stop-expand">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stop">
+        <div class="stop-dot"></div>
+        <div class="stop-card">
+          <div class="stop-card-inner">
+            <div class="stop-time">17:45</div>
+            <div class="stop-content">
+              <div class="stop-name">The LEGO® Store — Les Halles</div>
+              <div class="stop-type">Shopping · 1 Passage de la Canopée, 75001</div>
+              <div class="stop-notes">~25 mins from Quai de Valmy. Open until 19:00 on Sundays. Budget 30–45 mins. Look out for their impressive large-scale Parisian builds!</div>
+              <div class="stop-tags"><span class="tag tag-shop">Shopping</span></div>
+            </div>
+            <div class="stop-expand">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stop">
+        <div class="stop-dot"></div>
+        <div class="stop-card">
+          <div class="stop-card-inner">
+            <div class="stop-time">18:45</div>
+            <div class="stop-content">
+              <div class="stop-name">Le Coin des Barons — Pokémon Corner</div>
+              <div class="stop-type">Shopping · 48B Rue de Rivoli, 75004</div>
+              <div class="stop-notes">A 10–15 min walk from Les Halles. Rated 4.7 stars and beloved by visitors — great plushies, cards and incredible displays. Open until 20:00. Then it's the Marais for dinner!</div>
+              <div class="stop-tags"><span class="tag tag-shop">Shopping</span></div>
+            </div>
+            <div class="stop-expand">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stop">
+        <div class="stop-dot"></div>
+        <div class="stop-card">
+          <div class="stop-card-inner">
+            <div class="stop-time">~20:00</div>
+            <div class="stop-content">
+              <div class="stop-name">Dinner in Le Marais — Three Options</div>
+              <div class="stop-type">Food · 4th Arrondissement</div>
+              <div class="stop-notes">All three are a short walk from Le Coin des Barons. <strong>Book ahead</strong> — the Marais is popular on Sunday evenings!</div>
+              <div class="stop-tags"><span class="tag tag-food">Dinner</span></div>
+            </div>
+            <div class="stop-expand">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dinner-options">
+        <div class="dinner-card">
+          <div class="dinner-rating">★ 4.6</div>
+          <div class="dinner-name">Chez Mademoiselle</div>
+          <div class="dinner-addr">16 Rue Charlemagne, 75004</div>
+          <div class="dinner-desc">Cosy Marais bistro with a varied menu — pasta, steak, salads — so the vegetarian is well covered. Beloved for its spectacular desserts (the pistachio melting cake is legendary). Staff are famously warm and welcoming. Open until midnight.</div>
+          <div class="stop-tags"><span class="tag tag-food">Veggie Options ✓</span><span class="tag tag-activity">Best Desserts</span></div>
+        </div>
+        <div class="dinner-card">
+          <div class="dinner-rating">★ 4.3</div>
+          <div class="dinner-name">Le Potager du Marais</div>
+          <div class="dinner-addr">26 Rue Saint-Paul, 75004</div>
+          <div class="dinner-desc">A brilliant option for the whole group — vegan twists on classic French dishes. Think vegan French onion soup, seitan bourguignon and chestnut crumble. Non-veggies are often genuinely impressed. A fun, different experience. Open Sunday evenings from 19:00.</div>
+          <div class="stop-tags"><span class="tag tag-food">Vegetarian ✓</span><span class="tag tag-activity">Unique Experience</span></div>
+        </div>
+        <div class="dinner-card">
+          <div class="dinner-rating">★ 4.6</div>
+          <div class="dinner-name">Au Bourguignon du Marais</div>
+          <div class="dinner-addr">52 Rue François Miron, 75004</div>
+          <div class="dinner-desc">Classic French bistro with legendary beef bourguignon, fish dishes and crème brûlée. Mention your vegetarian when booking — most traditional French bistros will accommodate. Reviewers rave about the staff. Book well ahead.</div>
+          <div class="stop-tags"><span class="tag tag-food">Mention Veggie When Booking</span><span class="tag tag-activity">Classic French</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tips-section">
+      <div class="tips-heading">✦ Day Notes</div>
+      <div class="tips-grid">
+        <div class="tip-card">
+          <div class="tip-icon">🗼</div>
+          <div class="tip-title">Galeries Lafayette Rooftop</div>
+          <div class="tip-text">Don't skip the free rooftop terrace at Galeries Lafayette — it's one of the best views in central Paris and completely free. You can also see the glass dome from inside.</div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">🛶</div>
+          <div class="tip-title">Canal Saint-Martin</div>
+          <div class="tip-text">The Quai de Valmy is in the 10th arr. Give yourself plenty of time to get there — aim to arrive by 14:45 at the latest. The canal area is also gorgeous for an evening walk.</div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">🧩</div>
+          <div class="tip-title">Lego → Pokémon Walk</div>
+          <div class="tip-text">These two shops are only about 10 mins walk from each other along Rue de Rivoli. Do Lego first, then walk east to Le Coin des Barons. Very efficient!</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 3 -->
+  <div class="day-panel" id="day-2">
+    <div class="day-header">
+      <div class="day-number">03</div>
+      <div class="day-title-block">
+        <div class="day-label">Monday 2nd March</div>
+        <h2 class="day-title">The Eiffel Tower, Angelina &amp; the Louvre</h2>
+        <p class="day-narrative">A classic Parisian grand tour. From the iron majesty of the Eiffel Tower to the legendary hot chocolate at Angelina, to the vast halls of the world's greatest museum.</p>
+      </div>
+    </div>
+
+    <div class="timeline">
+
+      <div class="stop">
+        <div class="stop-dot"></div>
+        <div class="stop-card">
+          <div class="stop-card-inner">
+            <div class="stop-time">Hotel</div>
+            <div class="stop-content">
+              <div class="stop-name">Breakfast at La Belle Ville</div>
+              <div class="stop-type">Food · Included with stay</div>
+              <div class="stop-notes">Big day ahead — make the most of your included breakfast. Leave by 10:00 to reach the Eiffel Tower in time.</div>
+              <div class="stop-tags"><span class="tag tag-food">Breakfast</span><span class="tag tag-booked">Included</span></div>
+            </div>
+            <div class="stop-expand">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stop">
+        <div class="stop-dot"></div>
+        <div class="stop-card">
+          <div class="stop-card-inner">
+            <div class="stop-time">10:45</div>
+            <div class="stop-content">
+              <div class="stop-name">Eiffel Tower — Guided Tour</div>
+              <div class="stop-type">Landmark · Av. Gustave Eiffel, 75007</div>
+              <div class="stop-notes">Your booked tour starts at 10:45 — arrive by 10:30. Allow around 1 hour. The views from the top are absolutely worth it. Afterwards, take a moment in the Champ de Mars gardens below.</div>
+              <div class="stop-tags"><span class="tag tag-booked">Booked</span><span class="tag tag-activity">Iconic Landmark</span></div>
+            </div>
+            <div class="stop-expand">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stop">
+        <div class="stop-dot"></div>
+        <div class="stop-card">
+          <div class="stop-card-inner">
+            <div class="stop-time">12:15</div>
+            <div class="stop-content">
+              <div class="stop-name">Angelina — Hot Chocolate &amp; Lunch</div>
+              <div class="stop-type">Café · 226 Rue de Rivoli, 75001</div>
+              <div class="stop-notes">~20 mins from the Eiffel Tower. The famous African hot chocolate here is the stuff of legend — go before the post-lunch rush hits. Great for food too. Open until 19:00 on Mondays.</div>
+              <div class="stop-tags"><span class="tag tag-food">Lunch</span><span class="tag tag-food">Hot Chocolate</span></div>
+            </div>
+            <div class="stop-expand">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stop">
+        <div class="stop-dot"></div>
+        <div class="stop-card">
+          <div class="stop-card-inner">
+            <div class="stop-time">13:45</div>
+            <div class="stop-content">
+              <div class="stop-name">The Louvre Museum</div>
+              <div class="stop-type">Museum · 75001 Paris · Open Mon 9:00–18:00</div>
+              <div class="stop-notes">Just 2 minutes walk from Angelina! Pre-book timed entry tickets online to skip the queue. Budget 2–3 hours minimum. Don't miss Napoleon's Apartments — a hidden gem most visitors overlook. Last entry 17:00.</div>
+              <div class="stop-tags"><span class="tag tag-activity">Museum</span><span class="tag tag-activity">Pre-book Required</span></div>
+            </div>
+            <div class="stop-expand">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stop">
+        <div class="stop-dot"></div>
+        <div class="stop-card">
+          <div class="stop-card-inner">
+            <div class="stop-time">~17:00</div>
+            <div class="stop-content">
+              <div class="stop-name">Evening — Three Plans to Choose From</div>
+              <div class="stop-type">Food · Friends depart on Eurostar 21:09 from Gare du Nord</div>
+              <div class="stop-notes">Friends need to be at Gare du Nord by <strong>20:00</strong> for their 21:09 Eurostar. Hotel Mondial (where they're collecting bags) is ~15 mins from the Louvre and ~10 mins from Gare du Nord. Pick the plan that suits the group's energy on the day!</div>
+              <div class="stop-tags"><span class="tag tag-travel">Friends: 21:09 Eurostar</span></div>
+            </div>
+            <div class="stop-expand">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="plan-blocks">
+
+        <div class="plan-block">
+          <div class="plan-label">Plan A — All Four Together</div>
+          <div class="plan-desc">Early dinner near the Louvre ~17:30, done by 19:00. Friends metro to Hotel Mondial (~15 mins), collect bags, then on to Gare du Nord (~10 mins). You and your boyfriend head back to La Belle Ville. Plenty of time, no rush.</div>
+          <div class="dinner-options" style="margin-top:1rem;">
+            <div class="dinner-card">
+              <div class="dinner-rating">★ 4.8</div>
+              <div class="dinner-name">Daimant Saint-Honoré</div>
+              <div class="dinner-addr">24 Pl. du Marché Saint-Honoré, 75001</div>
+              <div class="dinner-desc">Upscale plant-based French near Palais Royal. Tasting-plate style, great for sharing. Non-veggies regularly blown away. A special birthday dinner option. Open until midnight.</div>
+              <div class="stop-tags"><span class="tag tag-food">Vegetarian ✓</span><span class="tag tag-activity">Most Special</span></div>
+            </div>
+            <div class="dinner-card">
+              <div class="dinner-rating">★ 4.4</div>
+              <div class="dinner-name">Bistrot Victoires</div>
+              <div class="dinner-addr">6 Rue de la Vrillière, 75001</div>
+              <div class="dinner-desc">Iconic bistro near Palais Royal, famous for duck confit and steak-frites. Mention the vegetarian when booking. Arrive early to keep on schedule.</div>
+              <div class="stop-tags"><span class="tag tag-food">Mention Veggie When Booking</span><span class="tag tag-activity">Best Value</span></div>
+            </div>
+            <div class="dinner-card">
+              <div class="dinner-rating">★ 4.4</div>
+              <div class="dinner-name">Café de la Régence</div>
+              <div class="dinner-addr">167 Rue Saint-Honoré, 75001</div>
+              <div class="dinner-desc">Lively brasserie steps from the Louvre. Broad menu covering everyone — chicken, steak, salads, soups. Welcoming to groups and no need to pre-book.</div>
+              <div class="stop-tags"><span class="tag tag-food">Veggie Options ✓</span><span class="tag tag-activity">Closest to Louvre</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="plan-block">
+          <div class="plan-label">Plan B — Split for the Evening</div>
+          <div class="plan-desc">Friends head straight from the Louvre to Hotel Mondial to check out, then grab dinner near Gare du Nord before their train. Meanwhile you and your boyfriend have a relaxed pizza dinner at La Belle Ville — a lovely low-key end to the trip, just the two of you.</div>
+          <div class="dinner-options" style="margin-top:1rem;">
+            <div class="dinner-card">
+              <div class="dinner-rating">Your Hotel</div>
+              <div class="dinner-name">Pizza at La Belle Ville</div>
+              <div class="dinner-addr">349 Rue de Belleville, 75019</div>
+              <div class="dinner-desc">The hotel's own pizza restaurant — no travel, no booking stress, just a cosy final evening. Reviewers love both the food and the atmosphere. A really nice way to wind down before Tuesday's early start.</div>
+              <div class="stop-tags"><span class="tag tag-food">You &amp; Boyfriend</span><span class="tag tag-activity">No Booking Needed</span></div>
+            </div>
+            <div class="dinner-card">
+              <div class="dinner-rating">★ 4.7</div>
+              <div class="dinner-name">Brasserie Bellanger <span style="font-size:0.75em;font-style:italic;">(for friends)</span></div>
+              <div class="dinner-addr">140 Rue du Faubourg Poissonnière, 75010</div>
+              <div class="dinner-desc">Just 5 mins from Gare du Nord and rated 4.7★ — a brilliant option for your friends before their train. Seasonal French menu, great service, and very relaxed about late sittings. Open until 23:30.</div>
+              <div class="stop-tags"><span class="tag tag-travel">Friends Only</span><span class="tag tag-activity">Near Gare du Nord</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="plan-block">
+          <div class="plan-label">Plan C — Friends Go It Alone</div>
+          <div class="plan-desc">Friends grab something quick at or near Gare du Nord before their 21:09 train — plenty of options including Terminus Nord (classic brasserie, right outside the station) or quick bites inside. You and your boyfriend have pizza at La Belle Ville. Clean and simple!</div>
+        </div>
+
+        <div class="plan-block">
+          <div class="plan-label">Plan D — All Four at La Belle Ville 🍕</div>
+          <div class="plan-desc">The most sociable send-off! Friends collect bags from Hotel Mondial after the Louvre (~20 mins metro), then head to La Belle Ville for pizza together (~20-25 mins from Hotel Mondial). Aim to sit down by <strong>18:30</strong> and wrap up by <strong>19:45</strong> — friends then head straight to Gare du Nord from the hotel (~15-20 mins metro), arriving around 20:05-20:10. Still comfortable for the 21:09 Eurostar. The only caveat: friends will be arriving with their luggage, and everyone needs to be disciplined about leaving the table on time!</div>
+          <div class="dinner-options" style="margin-top:1rem;">
+            <div class="dinner-card">
+              <div class="dinner-rating">Your Hotel</div>
+              <div class="dinner-name">Pizza at La Belle Ville</div>
+              <div class="dinner-addr">349 Rue de Belleville, 75019</div>
+              <div class="dinner-desc">A relaxed, no-booking-needed pizza dinner for all four at your hotel restaurant. A lovely way to end the trip together before the friends head straight to Gare du Nord with their bags. Just make sure everyone's out the door by 19:45!</div>
+              <div class="stop-tags"><span class="tag tag-food">All Four Together</span><span class="tag tag-activity">No Booking Needed</span><span class="tag tag-travel">Friends: Leave by 19:45 ⚠️</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="tips-section">
+      <div class="tips-heading">✦ Day Notes</div>
+      <div class="tips-grid">
+        <div class="tip-card">
+          <div class="tip-icon">⚠️</div>
+          <div class="tip-title">Louvre Is Closed Tuesdays</div>
+          <div class="tip-text">This is why the Louvre is on Monday — it's closed every Tuesday. Today is the only day it works. Last entry is 17:00 so don't linger too long at Angelina!</div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">🎫</div>
+          <div class="tip-title">Book Louvre Tickets Now</div>
+          <div class="tip-text">Pre-book timed entry at louvre.fr — queues without a booking can be 1–2 hours. With a booking you walk straight in via the Carrousel du Louvre entrance.</div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">🚂</div>
+          <div class="tip-title">Friends' Eurostar — 21:09</div>
+          <div class="tip-text">Friends must leave dinner by 19:15. Route: Louvre area → Hotel Mondial to collect bags (~15 mins) → Gare du Nord (~10 mins). Aim to arrive at the station by 20:00 — Eurostar security needs at least 45–60 mins.</div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">☕</div>
+          <div class="tip-title">Angelina Queue Tip</div>
+          <div class="tip-text">Angelina is famous for queues. Going on a Monday (vs the weekend) is already smart, but arriving by 12:15 before the lunch rush is key. Worth every minute of any wait!</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 4 -->
+  <div class="day-panel" id="day-3">
+    <div class="day-header">
+      <div class="day-number">04</div>
+      <div class="day-title-block">
+        <div class="day-label">Tuesday 3rd March</div>
+        <h2 class="day-title">Final Breakfast &amp; Au Revoir</h2>
+        <p class="day-narrative">A gentle final morning. One last Parisian breakfast, a lingering look at the city, then homeward bound through the Channel Tunnel.</p>
+      </div>
+    </div>
+
+    <div class="timeline">
+
+      <div class="stop">
+        <div class="stop-dot"></div>
+        <div class="stop-card">
+          <div class="stop-card-inner">
+            <div class="stop-time">07:30</div>
+            <div class="stop-content">
+              <div class="stop-name">Final Breakfast at La Belle Ville</div>
+              <div class="stop-type">Food · Included with stay</div>
+              <div class="stop-notes">Savour your last included Parisian breakfast. Check out of the hotel and make sure you leave by 08:45 to reach Gare du Nord with plenty of time.</div>
+              <div class="stop-tags"><span class="tag tag-food">Breakfast</span><span class="tag tag-booked">Included</span></div>
+            </div>
+            <div class="stop-expand">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stop">
+        <div class="stop-dot"></div>
+        <div class="stop-card">
+          <div class="stop-card-inner">
+            <div class="stop-time">~09:10</div>
+            <div class="stop-content">
+              <div class="stop-name">Arrive Gare du Nord</div>
+              <div class="stop-type">Travel · 18 Rue de Dunkerque, 75010</div>
+              <div class="stop-notes">Aim to arrive by 09:10–09:15. The Eurostar check-in, passport control and security typically takes 30–45 minutes. Don't cut it too fine!</div>
+              <div class="stop-tags"><span class="tag tag-travel">Station</span></div>
+            </div>
+            <div class="stop-expand">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stop">
+        <div class="stop-dot"></div>
+        <div class="stop-card">
+          <div class="stop-card-inner">
+            <div class="stop-time">10:07</div>
+            <div class="stop-content">
+              <div class="stop-name">Eurostar — Paris to London</div>
+              <div class="stop-type">Travel · Gare du Nord → St Pancras</div>
+              <div class="stop-notes">Departure 10:07. <em>Au revoir, Paris!</em> What a trip. Remember to set your watch back 1 hour as you arrive in London.</div>
+              <div class="stop-tags"><span class="tag tag-travel">Eurostar</span><span class="tag tag-booked">Booked</span></div>
+            </div>
+            <div class="stop-expand">→</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tips-section">
+      <div class="tips-heading">✦ Final Tips</div>
+      <div class="tips-grid">
+        <div class="tip-card">
+          <div class="tip-icon">🛂</div>
+          <div class="tip-title">Eurostar Security</div>
+          <div class="tip-text">Eurostar has UK passport control at the Paris end, so security can take longer than you expect. Arrive at Gare du Nord no later than 09:15 for a 10:07 departure.</div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">🕐</div>
+          <div class="tip-title">Time Zone</div>
+          <div class="tip-text">Remember to set your clocks back 1 hour when you arrive back in London. Don't miss any onward connections!</div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">🥐</div>
+          <div class="tip-title">One Last Treat</div>
+          <div class="tip-text">There are good coffee spots and bakeries inside Gare du Nord if you have a little time to spare before boarding. Grab a final croissant!</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+
+</footer>
+
+<script>
+  // Day switching
+  function showDay(index) {
+    document.querySelectorAll('.day-panel').forEach((p, i) => {
+      p.classList.toggle('active', i === index);
+    });
+    document.querySelectorAll('.nav-btn').forEach((b, i) => {
+      b.classList.toggle('active', i === index);
+    });
+    window.scrollTo({ top: document.querySelector('.nav').offsetTop, behavior: 'smooth' });
+    setTimeout(animateStops, 100);
+  }
+
+  // Intersection Observer for stop animations
+  function animateStops() {
+    const stops = document.querySelectorAll('.day-panel.active .stop');
+    stops.forEach((stop, i) => {
+      stop.style.transitionDelay = `${i * 80}ms`;
+      stop.classList.add('visible');
+    });
+  }
+
+  // Initial animation on load
+  window.addEventListener('load', () => {
+    setTimeout(animateStops, 200);
+  });
+
+  // Re-animate when switching days
+  document.querySelectorAll('.nav-btn').forEach((btn, i) => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.day-panel.active .stop').forEach(s => {
+        s.classList.remove('visible');
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
