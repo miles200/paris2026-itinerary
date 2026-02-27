@@ -747,6 +747,59 @@
     text-transform: uppercase;
   }
 
+  /* TRANSIT CONNECTORS */
+  .transit-connector {
+    padding: 0.25rem 0 0.25rem 2.5rem;
+    display: flex;
+    align-items: center;
+  }
+  .transit-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.22rem 0.8rem;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .transit-badge.metro  { background: rgba(28,58,94,0.1);    color: #1c3a5e; border: 1px solid rgba(28,58,94,0.25); }
+  .transit-badge.walk   { background: rgba(80,110,20,0.1);   color: #3a6010; border: 1px solid rgba(80,110,20,0.25); }
+  .transit-badge.either { background: rgba(201,168,76,0.09); color: #7a5c00; border: 1px solid rgba(201,168,76,0.3); }
+
+  /* TRANSPORT SUMMARY */
+  .transport-summary {
+    background: #1a1410;
+    color: #f5f0e8;
+    padding: 1rem 1.4rem;
+    border-radius: 2px;
+    margin-bottom: 1.5rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.3rem 1.2rem;
+    align-items: start;
+  }
+  .transport-verdict              { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; white-space: nowrap; }
+  .transport-verdict.individual   { color: #8bc47a; }
+  .transport-verdict.daypass      { color: #d4af60; }
+  .transport-detail {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.57rem;
+    letter-spacing: 0.07em;
+    color: rgba(245,240,232,0.45);
+    line-height: 1.6;
+    padding-top: 0.1rem;
+  }
+  .transport-trips {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: 0.4rem;
+  }
+  .transport-trip         { font-family: 'DM Mono', monospace; font-size: 0.55rem; letter-spacing: 0.06em; padding: 0.18rem 0.55rem; border-radius: 2px; }
+  .transport-trip.metro-t { background: rgba(28,58,94,0.35);  color: #9ab8d8; }
+  .transport-trip.walk-t  { background: rgba(80,110,20,0.3);  color: #a8c878; }
+
   /* TIPS SECTION */
   .tips-section {
     margin-top: 4rem;
@@ -888,6 +941,11 @@
       </div>
     </div>
 
+    <div class="transport-summary">
+      <div class="transport-verdict individual">🎟 Buy Individual Tickets — €7.65 per person</div>
+      <div class="transport-detail">3 metro trips · day pass = €12.30 · individual saves €4.65</div>
+      <div class="transport-trips"><span class="transport-trip metro-t">🚇 Gare du Nord → Hotel</span><span class="transport-trip metro-t">🚇 Hotel → Night Tour</span><span class="transport-trip walk-t">🚶 Tour → Dinner (~5 mins)</span><span class="transport-trip metro-t">🚇 Dinner → Hotel</span></div>
+    </div>
     <div class="timeline">
 
       <div class="stop">
@@ -905,6 +963,7 @@
           </div>
         </div>
       </div>
+      <div class="transit-connector"><span class="transit-badge walk">🚶 Head to St Pancras · allow 60–90 mins before departure</span></div>
 
       <div class="stop">
         <div class="stop-dot"></div>
@@ -921,6 +980,7 @@
           </div>
         </div>
       </div>
+      <div class="transit-connector"><span class="transit-badge metro">🚇 Metro Line 5 · ~20 mins · Gare du Nord → Belleville</span></div>
 
       <div class="stop">
         <div class="stop-dot"></div>
@@ -937,6 +997,7 @@
           </div>
         </div>
       </div>
+      <div class="transit-connector"><span class="transit-badge metro">🚇 Metro Line 2 · ~20 mins · Belleville → Châtelet, walk to Île de la Cité</span></div>
 
       <div class="stop">
         <div class="stop-dot"></div>
@@ -953,6 +1014,7 @@
           </div>
         </div>
       </div>
+      <div class="transit-connector"><span class="transit-badge walk">🚶 Walk · ~5 mins · Le Marais is right there after the tour</span></div>
 
       <div class="stop">
         <div class="stop-dot"></div>
@@ -1005,6 +1067,11 @@
       </div>
     </div>
 
+    <div class="transport-summary">
+      <div class="transport-verdict daypass">🎟 Day Pass Recommended — €12.30 per person</div>
+      <div class="transport-detail">4 metro trips · individual = €10.20 · day pass marginal but worth it for flexibility</div>
+      <div class="transport-trips"><span class="transport-trip metro-t">🚇🚶 Hotel → Montmartre</span><span class="transport-trip walk-t">🚶 Montmartre → Galeries (~20 mins)</span><span class="transport-trip walk-t">🚶 Galeries → Lunch (~2 mins)</span><span class="transport-trip metro-t">🚇 Lunch → Canal Cruise</span><span class="transport-trip walk-t">🚶 Cruise finish → Lego (~15 mins walk)</span><span class="transport-trip walk-t">🚶 Lego → Pokémon (~10 mins)</span><span class="transport-trip metro-t">🚇 Pokémon → Arc</span><span class="transport-trip metro-t">🚇 Arc → Hotel</span></div>
+    </div>
     <div class="timeline">
 
       <div class="stop">
@@ -1022,6 +1089,7 @@
           </div>
         </div>
       </div>
+      <div class="transit-connector"><span class="transit-badge either">🚇🚶 Walk ~25 mins uphill OR Metro Line 2 ~10 mins · Belleville → Anvers</span></div>
 
       <div class="stop">
         <div class="stop-dot"></div>
@@ -1038,6 +1106,7 @@
           </div>
         </div>
       </div>
+      <div class="transit-connector"><span class="transit-badge walk">🚶 Walk · ~20 mins downhill through the 9th</span></div>
 
       <div class="stop">
         <div class="stop-dot"></div>
@@ -1054,6 +1123,7 @@
           </div>
         </div>
       </div>
+      <div class="transit-connector"><span class="transit-badge walk">🚶 Walk · ~2 mins · lunch is right in the same area</span></div>
 
       <div class="stop">
         <div class="stop-dot"></div>
@@ -1070,6 +1140,7 @@
           </div>
         </div>
       </div>
+      <div class="transit-connector"><span class="transit-badge metro">🚇 Metro · ~25 mins · Opéra → République, walk to Quai de Valmy</span></div>
 
       <div class="stop">
         <div class="stop-dot"></div>
@@ -1078,14 +1149,15 @@
             <div class="stop-time">15:00</div>
             <div class="stop-content">
               <div class="stop-name">River Cruise — Canal Saint-Martin</div>
-              <div class="stop-type">Activity · 71 Quai de Valmy, 75010</div>
-              <div class="stop-notes">~25–30 mins from Galeries Lafayette by metro. The cruise runs 15:00–17:00. A beautiful 2-hour journey along Paris's romantic canal with iron footbridges and leafy towpaths.</div>
+              <div class="stop-type">Activity · Departs 71 Quai de Valmy, 75010 · Arrives Île de la Cité</div>
+              <div class="stop-notes">~25–30 mins from Galeries Lafayette by metro. The cruise runs 15:00–17:00 — a beautiful 2-hour journey along Paris's romantic canal with iron footbridges and leafy towpaths. <strong>Finishes at Île de la Cité</strong>, putting you just a short walk from Châtelet and the Lego Store.</div>
               <div class="stop-tags"><span class="tag tag-booked">Booked</span><span class="tag tag-activity">Cruise</span></div>
             </div>
             <div class="stop-expand">→</div>
           </div>
         </div>
       </div>
+      <div class="transit-connector"><span class="transit-badge walk">🚶 Walk · ~15 mins · cruise drops you at Île de la Cité, walk to Châtelet/Les Halles</span></div>
 
       <div class="stop">
         <div class="stop-dot"></div>
@@ -1095,13 +1167,14 @@
             <div class="stop-content">
               <div class="stop-name">The LEGO® Store — Les Halles</div>
               <div class="stop-type">Shopping · 1 Passage de la Canopée, 75001</div>
-              <div class="stop-notes">~25 mins from Quai de Valmy. Open until 19:00 on Sundays. Budget 30–45 mins. Look out for their impressive large-scale Parisian builds!</div>
+              <div class="stop-notes">A short ~15 min walk from where the cruise drops you at Île de la Cité. Open until 19:00 on Sundays. Budget 30–45 mins. Look out for their impressive large-scale Parisian builds!</div>
               <div class="stop-tags"><span class="tag tag-shop">Shopping</span></div>
             </div>
             <div class="stop-expand">→</div>
           </div>
         </div>
       </div>
+      <div class="transit-connector"><span class="transit-badge walk">🚶 Walk · ~10 mins east along Rue de Rivoli</span></div>
 
       <div class="stop">
         <div class="stop-dot"></div>
@@ -1118,6 +1191,7 @@
           </div>
         </div>
       </div>
+      <div class="transit-connector"><span class="transit-badge metro">🚇 Metro Line 1 · ~20 mins · Châtelet → Charles de Gaulle–Étoile</span></div>
 
       <div class="stop">
         <div class="stop-dot"></div>
@@ -1134,6 +1208,7 @@
           </div>
         </div>
       </div>
+      <div class="transit-connector"><span class="transit-badge walk">🚶 Walk · ~5 mins · dinner restaurants are right in the 8th</span></div>
 
       <div class="stop">
         <div class="stop-dot"></div>
@@ -1188,7 +1263,7 @@
         <div class="tip-card">
           <div class="tip-icon">🛶</div>
           <div class="tip-title">Canal Saint-Martin</div>
-          <div class="tip-text">The Quai de Valmy is in the 10th arr. Give yourself plenty of time to get there — aim to arrive by 14:45 at the latest. The canal area is also gorgeous for an evening walk.</div>
+          <div class="tip-text">Departs from Quai de Valmy in the 10th arr. — aim to arrive by 14:45. The cruise finishes at Île de la Cité, leaving you within walking distance of Châtelet and the Lego Store. Convenient!</div>
         </div>
         <div class="tip-card">
           <div class="tip-icon">🧩</div>
@@ -1210,6 +1285,11 @@
       </div>
     </div>
 
+    <div class="transport-summary">
+      <div class="transport-verdict individual">🎟 Buy Individual Tickets — €5.10 per person</div>
+      <div class="transport-detail">2 metro trips · mostly walkable · day pass = €12.30 · save €7.20</div>
+      <div class="transport-trips"><span class="transport-trip metro-t">🚇 Hotel → Eiffel Tower (~35 mins)</span><span class="transport-trip walk-t">🚶 Eiffel → Angelina (~35 mins, scenic)</span><span class="transport-trip walk-t">🚶 Angelina → Louvre (~2 mins)</span><span class="transport-trip walk-t">🚶 Louvre → Dinner (~5 mins)</span><span class="transport-trip metro-t">🚇 Dinner → Hotel (~30 mins)</span></div>
+    </div>
     <div class="timeline">
 
       <div class="stop">
@@ -1227,6 +1307,7 @@
           </div>
         </div>
       </div>
+      <div class="transit-connector"><span class="transit-badge metro">🚇 Metro · ~35 mins · Line 2 Belleville → Nation, Line 6 → Bir-Hakeim</span></div>
 
       <div class="stop">
         <div class="stop-dot"></div>
@@ -1243,6 +1324,7 @@
           </div>
         </div>
       </div>
+      <div class="transit-connector"><span class="transit-badge walk">🚶 Walk · ~35 mins along the Seine · one of Paris's finest strolls</span></div>
 
       <div class="stop">
         <div class="stop-dot"></div>
@@ -1259,6 +1341,7 @@
           </div>
         </div>
       </div>
+      <div class="transit-connector"><span class="transit-badge walk">🚶 Walk · ~2 mins · Louvre entrance is just around the corner</span></div>
 
       <div class="stop">
         <div class="stop-dot"></div>
@@ -1275,6 +1358,7 @@
           </div>
         </div>
       </div>
+      <div class="transit-connector"><span class="transit-badge walk">🚶 Walk · ~5 mins · all dinner options walkable from the Louvre</span></div>
 
       <div class="stop">
         <div class="stop-dot"></div>
@@ -1404,6 +1488,11 @@
       </div>
     </div>
 
+    <div class="transport-summary">
+      <div class="transport-verdict individual">🎟 Single Ticket — €2.55 per person</div>
+      <div class="transport-detail">1 metro trip only · no need for a day pass</div>
+      <div class="transport-trips"><span class="transport-trip metro-t">🚇 Hotel → Gare du Nord (~20 mins)</span><span class="transport-trip walk-t">🚶 Within station to Eurostar departure</span></div>
+    </div>
     <div class="timeline">
 
       <div class="stop">
@@ -1421,6 +1510,7 @@
           </div>
         </div>
       </div>
+      <div class="transit-connector"><span class="transit-badge metro">🚇 Metro Line 2 · ~20 mins · Belleville → Gare du Nord · don't forget luggage!</span></div>
 
       <div class="stop">
         <div class="stop-dot"></div>
@@ -1437,6 +1527,7 @@
           </div>
         </div>
       </div>
+      <div class="transit-connector"><span class="transit-badge walk">🚶 Walk within Gare du Nord · follow Eurostar signs to departure hall</span></div>
 
       <div class="stop">
         <div class="stop-dot"></div>
